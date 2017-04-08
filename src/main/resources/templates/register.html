@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Registration</title>
+<link rel="stylesheet" href="css/demo.css" th:href="@{/css/demo.css}" />
+<link rel="stylesheet" href="css/form-register.css"
+	th:href="@{/css/form-register.css}" />
+<style>
+.form-row button {
+	margin: 50px 0px 0px 100px;
+}
+</style>
+
+</head>
+<body>
+<form role="form"  method="post" class="login-form" th:action="@{/garbagecollector/register}">
+	<header>
+	<h1>Clean city</h1>
+
+	</header>
+
+
+
+
+	<div class="main-content">
+		<div class="form-register-with-email">
+
+			<div class="form-white-back">
+
+				<div class="form-title-row">
+					<h1>Registration</h1>
+				</div>
+
+				<div class="form-row">
+					<table>
+						<tr>
+							<td>FirstName</td>
+							<td><input type="text" th:name="firstName" /></td>
+						</tr>
+						<tr>
+							<td>Last Name</td>
+							<td><input type="text" th:name="lastName" /></td>
+						</tr>
+						<tr>
+							<td>Contact Number</td>
+							<td><input type="text" th:name="mobileNumber"  maxlength="10"/></td>
+						</tr>
+						<tr>
+							<td>Email</td>
+
+							<td><input type="text" th:name="email" /></td>
+						</tr>
+
+						<tr>
+							<td>Password</td>
+
+							<td><input type="password" th:name="garbageSecurity.password"  /></td>
+						</tr>
+
+					</table>
+				</div>
+
+
+				<table align="center">
+					<tr>
+						<td><button type="submit">SAVE</button></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button type="submit">CANCEL</button></td>
+						<td><button type="submit">LOGOUT</button></td>
+					</tr>
+				</table>
+
+
+
+			</div>
+		</div>
+
+	</div>
+</form>
+</body>
+</html>

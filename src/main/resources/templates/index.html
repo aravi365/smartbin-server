@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Responsive Bootstrap Portfolio Template" />
+<meta name="author" content="Mostafiz" />
+<title>Cleancity Home</title>
+<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"
+	href="css/font-awesome.min.css" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="css/bootstrap.min.css" />
+<link rel="stylesheet" th:href="@{/css/styleone.css}"
+	href="css/styleone.css" />
+
+
+
+</head>
+
+<body>
+	<!-- ====================================================
+	header section -->
+	<header class="top-header">
+		<div class="container">
+			<div class="row header-row">
+				<div class="col-md-12">
+					<nav class="navbar navbar-default">
+
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<h2>GREEN CITY</h2>
+								<button type="button" class="navbar-toggle collapsed"
+									data-toggle="collapse"
+									data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span> <span
+										class="icon-bar"></span> <span class="icon-bar"></span> <span
+										class="icon-bar"></span>
+								</button>
+							</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse"
+								id="bs-example-navbar-collapse-1">
+
+								<ul class="nav navbar-nav navbar-right">
+									<li><a  th:href="@{/garbagecollector/login}"  href="#sec1">Login</a></li>
+
+									<li><a th:href="@{/garbagecollector/registration}" href="#sec3">Sign Up</a></li>
+
+								</ul>
+							</div>
+							<!-- /.navbar-collapse -->
+						</div>
+						<!-- /.container-fluid -->
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- banner area starts here -->
+	<section class="banner text-center" id="sec1">
+		<div class="container">
+			<div class="row">
+				<h3>
+					THERE IS NO SUCH THING AS "AWAY"<br/> <br/> WHEN WE THROW
+					ANYTHING AWAY IT<br/> <br/> MUST GO SOMEWHERE...
+				</h3>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>
+					<br/>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- footer starts here -->
+	<footer class="footer text-center">
+		<p>Copyright: &copy; | All rights reserved</p>
+	</footer>
+
+	<!-- script tags
+	============================================================= -->
+	<script th:src="@{/js/jquery-2.1.1.js}" src="js/jquery-2.1.1.js"></script>
+	<script th:src="@{/js/smoothscroll.js}" src="js/smoothscroll.js"></script>
+	<script th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+	<script th:src="@{/js/custom.js}" src="js/custom.js"></script>
+</body>
+
+</html>

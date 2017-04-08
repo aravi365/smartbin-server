@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Responsive Bootstrap Portfolio Template" />
+<meta name="author" content="Mostafiz" />
+<title>View details</title>
+<link rel="stylesheet" href="css/font-awesome.min.css"
+	th:href="@{/css/font-awesome.min.css}" />
+<link rel="stylesheet" href="css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="css/styleone.css"
+	th:href="@{/css/styleone.css}" />
+
+
+</head>
+
+<body>
+
+
+	<!-- ====================================================
+	header section -->
+	<header class="top-header">
+		<div class="container">
+			<div class="row header-row">
+				<div class="col-md-12">
+					<nav class="navbar navbar-default">
+
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<h3>GREEN CITY</h3>
+								<button type="button" class="navbar-toggle collapsed"
+									data-toggle="collapse"
+									data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span> <span
+										class="icon-bar"></span> <span class="icon-bar"></span> <span
+										class="icon-bar"></span>
+								</button>
+							</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse"
+								id="bs-example-navbar-collapse-1">
+
+								<ul class="nav navbar-nav navbar-right">
+									<li><a href="#sec1">Home</a></li>
+									<li><a   th:href="@{/garbagecollector/home}" href="#sec2">Logout</a></li>
+
+								</ul>
+							</div>
+							<!-- /.navbar-collapse -->
+						</div>
+						<!-- /.container-fluid -->
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+
+	<section class="portfolio text-center" id="sec4">
+		<div class="row portfolio-row">
+			<div class="portfolio-heading">
+				<h2>DETAILS</h2>
+
+
+			</div>
+
+
+
+			<select id="sel" onchange="syncbin(this.value);" th:field="*{gc}">
+				<option th:value="default">---Select Employee---</option>
+				<option th:each="emp  : ${gc}" th:value="${emp.email}"
+					th:text="${emp.firstName}"></option>
+
+			</select>
+
+               <button id="verify" onclick="verify()">monitor </button>
+
+
+
+			<div >
+
+				<div>
+					<div>
+
+						<div  class="col-md-3 single-portfolio col-sm-6" onmouseover="sync();">
+							<figure class="portfolio-item">
+								<img class="img-responsive" th:src="@{/img/wasteone.jpg}"
+									src="img/wasteone.jpg" alt="" />
+								<figcaption class="portfolio-details">
+									<h4 id="location0">WasteBin Location</h4>
+
+									<p id="capacity0">Current Capacity</p>
+
+									<p id="cleaned0">Last Cleaned:</p>
+
+									<p id="authorized0">Authorized :</p>
+								</figcaption>
+							</figure>
+
+						</div>
+
+
+						<!--my-->
+						<div class="row portfolio-row">
+
+							<div class="col-md-3 single-portfolio col-sm-6" onmouseover="sync();">
+								<figure class="portfolio-item">
+									<img class="img-responsive" th:src="@{/img/Wastefiv.jpg}"
+										src="img/wasteone.jpg" alt="" />
+									<figcaption class="portfolio-details">
+										<h4 id="location1">WasteBin Location</h4>
+
+										<p id="capacity1">Current Capacity</p>
+
+										<p id="cleaned1">Last Cleaned:</p>
+
+										<p id="authorized1">Authorized :</p>
+									</figcaption>
+								</figure>
+
+							</div>
+
+						</div>
+
+						<div class="col-md-3 single-portfolio col-sm-6" onmouseover="sync();">
+							<figure class="portfolio-item">
+								<img class="img-responsive" th:src="@{/img/wastebinthree.jpg}"
+									src="img/wasteone.jpg" alt="" />
+								<figcaption class="portfolio-details">
+									<h4 id="location2">WasteBin Location</h4>
+
+									<p id="capacity2">Current Capacity</p>
+
+									<p id="cleaned2">Last Cleaned:</p>
+
+									<p id="authorized2">Authorized :</p>
+								</figcaption>
+							</figure>
+
+						</div>
+
+
+
+
+						<div  class="col-md-3 single-portfolio col-sm-6" onmouseover="sync();">
+							<figure class="portfolio-item">
+								<img class="img-responsive" th:src="@{/img/wastesix.jpg}"
+									src="img/wasteone.jpg" alt="" />
+								<figcaption class="portfolio-details">
+									<h4 id="location3">WasteBin Location</h4>
+
+									<p id="capacity3">Current Capacity</p>
+
+									<p id="cleaned3">Last Cleaned:</p>
+
+									<p id="authorized3">Authorized :</p>
+								</figcaption>
+							</figure>
+
+						</div>
+
+
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+	</section>
+	<!-- end of portfolio section -->
+	<!-- footer starts here -->
+	<footer class="footer text-center">
+		<p>Copyright: &copy; | All rights reserved</p>
+	</footer>
+
+	<!-- script tags
+	============================================================= -->
+	<script th:src="@{/js/jquery-2.1.1.js}" src="js/jquery-2.1.1.js"></script>
+	<script th:src="@{/js/smoothscroll.js}" src="js/smoothscroll.js"></script>
+	<script th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+	<script th:src="@{/js/custom.js}" src="js/custom.js"></script>
+
+
+
+
+
+
+
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+		function syncbin(that) {
+			if (that == "default") {
+				//alert("This won't show");
+			}
+
+			invokeServer(that);
+		}
+
+		function invokeServer(emailID) {
+
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+
+				if (this.readyState == 4 && this.status == 200) {
+
+					var jsonData = JSON.parse(this.responseText);
+
+					for (var i = 0; i < jsonData.length; i++) {
+						document.getElementById("location" + i).innerHTML = jsonData[i].location;
+						document.getElementById("capacity" + i).innerHTML = "Current Capacity : "
+								+ jsonData[i].currentCapacity;
+						document.getElementById("cleaned" + i).innerHTML = "Last cleaned : "
+								+ jsonData[i].lastCleaned;
+						document.getElementById("authorized" + i).innerHTML = "Authorizor : "
+								+ jsonData[i].authorized;
+
+					}
+
+				}
+
+			};
+			xhttp.open("POST", "bindata", true);
+			xhttp.setRequestHeader("Content-type",
+					"application/x-www-form-urlencoded");
+			xhttp.send("email=" + emailID);
+		}
+		
+		
+		
+		function sync()
+		{
+			
+			
+			invokeServer(document.getElementById('sel').value);
+		}
+		
+		
+		function verify()
+		{
+
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+
+				if (this.readyState == 4 && this.status == 200) {
+
+					alert(this.responseText);
+
+				}
+
+			};
+			xhttp.open("GET", "monitor?email="+document.getElementById('sel').value, true);
+			xhttp.send();
+		}
+		
+		/*]]>*/
+	</script>
+</body>
+
+</html>
